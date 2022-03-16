@@ -1,4 +1,5 @@
 require ('dotenv').config();
+//MONGODB_URI="mongodb+srv://badbankuser:badbankpass@Cluster0.n9z04.mongodb.net/sample_mflix?retryWrites=true&w=majority"
 
 const MongoClient = require('mongodb').MongoClient;
 const url         = process.env.MONGODB_URI || 'mongodb://localhost:27017';
