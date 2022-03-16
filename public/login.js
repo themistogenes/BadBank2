@@ -79,16 +79,15 @@ function LoginForm(props){
             console.log('Login sictx.email: ' + sictx.email);
             sictx.balance = data.balance;
             console.log('Login sictx.balance: ' + sictx.balance);
+            addNavBarLinks();
+            updateLoggedInUser();
+            preventLogoutButtonDup();
+            addLogoutButton();
         } catch(err) {
             props.setStatus('Login failed');
             console.log('err:', text);
         }
     });
-
-    addNavBarLinks();
-    updateLoggedInUser();
-    preventLogoutButtonDup();
-    addLogoutButton();
   }
 
   function addNavBarLinks(){
