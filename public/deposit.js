@@ -1,6 +1,7 @@
 function Deposit(){
-  const [show, setShow]     = React.useState(true);
-  const [status, setStatus] = React.useState('');
+  const [show, setShow]       = React.useState(true);
+  const [status, setStatus]   = React.useState('');
+  const [balance, setBalance] = React.useState(sictx.balance);
 
   return (<div style={{display:"flex", justifyContent:"space-evenly"}}>   
     <Card
@@ -8,9 +9,10 @@ function Deposit(){
       txtcolor="dark"
       header="Deposit"
       status={status}
+      balance={balance}
       body={show ? 
-        <DepositForm setShow={setShow} setStatus={setStatus}/> :
-        <DepositMsg setShow={setShow} setStatus={setStatus}/>
+        <DepositForm setShow={setShow} setStatus={setStatus} setBalance={setBalance}/> :
+        <DepositMsg setShow={setShow} setStatus={setStatus} setBalance={setBalance}/>
       }
     />
   </div>)
@@ -21,7 +23,8 @@ function DepositMsg(props){
 
   return (<>
     <br/>
-    <p>Balance: {sictx.balance}</p>
+    {/*<p>Balance: {sictx.balance}</p>*/}
+    <p>Balance: {props.balance}</p>
 
     <button type="submit" 
       className="btn btn-dark" 
@@ -64,6 +67,7 @@ function DepositForm(props){
           //props.setStatus('Deposit successful!  Hopefully that\'s money you won\'t miss...');
           console.log('Deposit JSON data:', data);
           sictx.balance = data.value.balance;
+          setBalance(sictx.balance);
           console.log('Deposit sictx.balance: ' + sictx.balance);
           props.setShow(false);
         } catch(err) {
@@ -85,8 +89,13 @@ function DepositForm(props){
       onChange={e => setEmail(e.currentTarget.value)}
     /><br/>
   */}
+  {/*
     <p>
       Balance: {sictx.balance}
+    </p>
+  */}
+    <p>
+    Balance: {props.balance}
     </p>
     
     Amount (+)<br/>
