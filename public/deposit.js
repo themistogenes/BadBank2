@@ -1,4 +1,5 @@
 function Deposit(){
+  const sictx = React.useContext(SignInContext);
   const [show, setShow]       = React.useState(true);
   const [status, setStatus]   = React.useState('');
   const [balance, setBalance] = React.useState(sictx.balance);
