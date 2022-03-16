@@ -55,6 +55,7 @@ function LoginForm(props){
   const [password, setPassword] = React.useState('');
 
   function handle(){
+
     //Firebase Auth
     const auth = firebase.auth();
     const promise = auth.signInWithEmailAndPassword(email, password);
@@ -83,6 +84,7 @@ function LoginForm(props){
             console.log('err:', text);
         }
     });
+
     addNavBarLinks();
     updateLoggedInUser();
     preventLogoutButtonDup();

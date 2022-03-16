@@ -69,7 +69,7 @@ function WithdrawForm(props){
           //props.setStatus(JSON.stringify(data.value));
           props.setStatus('Withdrawal successful!  That was probably a good idea...');
           console.log('Withdraw JSON data:', data);
-          sictx.balance = data.value.balance;
+          sictx.balance = Number(Number(data.value.balance) - Number(amount));
           console.log('Withdraw sictx.balance: ' + sictx.balance);
           props.setShow(false);
         } catch(err) {
