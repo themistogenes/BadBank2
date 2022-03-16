@@ -9,6 +9,9 @@
   "keywords": [],
   "author": "Justin Alimaras",
   "license": "MIT",
+  "engines": {
+    "node": "^14.16.0"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dependencies": "^0.0.1",
