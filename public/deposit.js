@@ -68,7 +68,7 @@ function DepositForm(props){
           //props.setStatus('Deposit successful!  Hopefully that\'s money you won\'t miss...');
           console.log('Deposit JSON data:', data);
           sictx.balance = data.value.balance;
-          setBalance(sictx.balance);
+          props.setBalance(sictx.balance);
           console.log('Deposit sictx.balance: ' + sictx.balance);
           props.setShow(false);
         } catch(err) {
